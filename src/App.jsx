@@ -7,11 +7,11 @@ function App() {
   const [search, setSearch] = useState(''); // for search strings
   const [loading, setloading] = useState(false); // for loading state
   const [limit, setlimit] = useState(27); // for limit of gifs
+  const API_KEY = "Bb3bDQsR1VwJNC0GNMMAlKVOBWyHvIu5"
+   const BASE_URL ="https://api.giphy.com/v1/gifs/search"
   
   
-  const API_KEY = import.meta.env.VITE_API_KEY;
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
-
+  
   // function to search gifs
   
   const limitmin = 1;
@@ -57,7 +57,7 @@ function App() {
   const deleteGif = (gifid) => {
     const newGifs = gifs.filter((gif) => gif.id !== gifid);
     setgifs(newGifs); 
-    
+
   }
   useEffect(() => {
   searchgifs();    
